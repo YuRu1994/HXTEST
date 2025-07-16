@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>皇鑫不動產仲介經紀有限公司｜住商不動產 信義101加盟店</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body {
+      margin: 0;
+      font-family: 'Noto Sans TC', sans-serif;
+      background-color: #fff;
+      color: #222;
+    }
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: white;
+      border-bottom: 1px solid #eee;
+      padding: 15px 40px;
+      z-index: 999;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      color: #bfa14a;
+      margin: 0;
+      font-size: 1.5rem;
+    }
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+    nav a:hover {
+      color: #bfa14a;
+    }
+
+    /* hero 區塊 */
+    .hero {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      color: white;
+    }
+    .media-container {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+    .media-slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+    .media-slide.active {
+      opacity: 1;
+    }
+    .hero-text {
+      z-index: 1;
+      color: #fff;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+      padding: 0 20px;
+    }
+    .hero-text h2 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+    }
+    .hero-text p {
+      font-size: 1.2rem;
+    }
+
+    section {
+      padding: 100px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .section-title {
+      font-size: 2rem;
+      color: #bfa14a;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+    .card {
+      border: 1px solid #eee;
+      border-radius: 8px;
+      padding: 20px;
+      background: #fafafa;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    form input, form textarea {
+      padding: 12px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    form button {
+      background-color: #bfa14a;
+      color: white;
+      font-size: 1rem;
+      border: none;
+      padding: 12px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    footer {
+      background: #111;
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>皇鑫不動產仲介經紀有限公司｜住商不動產 信義101加盟店</h1>
+    <nav>
+      <a href="#home">首頁</a>
+      <a href="#services">服務</a>
+      <a href="#cases">案例</a>
+      <a href="#contact">聯絡我們</a>
+    </nav>
+  </header>
+
+  <!-- ✅ HERO 區塊（圖片＋影片輪播） -->
+  <section class="hero" id="home">
+    <div class="media-container">
+      <img src="img/slide1.jpg" class="media-slide active" />
+      <video class="media-slide" muted playsinline>
+        <source src="video/hero.mp4" type="video/mp4" />
+      </video>
+      <img src="img/slide2.jpg" class="media-slide" />
+    </div>
+    <div class="hero-text">
+      <h2>整合式不動產解決方案</h2>
+      <p>從都更推動、土地整合到建案代銷，全方位專業服務</p>
+    </div>
+  </section>
+
+  <section id="services">
+    <h2 class="section-title">服務項目</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>都更整合推動</h3>
+        <p>協助社區與地主順利啟動都市更新計畫，整合資源、爭取最大權益。</p>
+      </div>
+      <div class="card">
+        <h3>建案代銷服務</h3>
+        <p>提供銷售策略、廣告行銷與客戶管理的一條龍代銷服務。</p>
+      </div>
+      <div class="card">
+        <h3>不動產買賣</h3>
+        <p>協助個人與法人進行不動產交易，專業談判、交易透明。</p>
+      </div>
+      <div class="card">
+        <h3>開發諮詢</h3>
+        <p>提供土地評估、法規分析與可行性規劃，打造最佳投資模式。</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="cases">
+    <h2 class="section-title">精選案例</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>信義重劃案 B 案</h3>
+        <p>協助地主整合與建商媒合，完成 1.2 億元開發合作簽約。</p>
+      </div>
+      <div class="card">
+        <h3>文山區都更案</h3>
+        <p>歷經 18 個月整合 60% 土地權利人，成功進入核定程序。</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 class="section-title">聯絡我們</h2>
+    <form name="submit-to-google-sheet">
+      <input type="text" name="姓名" placeholder="姓名" required />
+      <input type="tel" name="電話" placeholder="電話" required />
+      <input type="email" name="Email" placeholder="Email" required />
+      <textarea name="留言" rows="4" placeholder="想詢問的內容..." required></textarea>
+      <button type="submit">送出留言</button>
+      <p id="response-message" style="color: green;"></p>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 皇鑫不動產仲介經紀有限公司｜住商不動產 信義101加盟店</p>
+  </footer>
+
+  <!-- ✅ 輪播 JavaScript -->
+  <script>
+    const mediaSlides = document.querySelectorAll(".media-slide");
+    let mediaIndex = 0;
+
+    function showNextMedia() {
+      const current = mediaSlides[mediaIndex];
+      if (current.tagName === "VIDEO") {
+        current.pause();
+        current.currentTime = 0;
+      }
+      current.classList.remove("active");
+
+      mediaIndex = (mediaIndex + 1) % mediaSlides.length;
+      const next = mediaSlides[mediaIndex];
+      next.classList.add("active");
+
+      if (next.tagName === "VIDEO") {
+        next.play();
+        next.onended = () => {
+          showNextMedia();
+        };
+      } else {
+        setTimeout(showNextMedia, 4000);
+      }
+    }
+
+    window.addEventListener("load", () => {
+      const first = mediaSlides[0];
+      if (first.tagName === "VIDEO") {
+        first.play();
+        first.onended = () => {
+          showNextMedia();
+        };
+      } else {
+        setTimeout(showNextMedia, 4000);
+      }
+    });
+  </script>
+
+  <!-- ✅ 表單送出到 Google 試算表 -->
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwwpfG8ae6k9z6R0qXuv6o5a3--Tq1HoFuMo_Dl7y7g8tNpFQHPo2l8chGKPL1a9EPyNw/exec';
+    const form = document.forms['submit-to-google-sheet'];
+    const msg = document.getElementById('response-message');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+          msg.textContent = "✅ 已收到您的留言，日後請留意信箱和電話";
+          form.reset();
+        })
+        .catch(error => {
+          msg.textContent = "❌ 發送失敗，請稍後再試。";
+        });
+    });
+  </script>
+</body>
+</html>
