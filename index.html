@@ -5,13 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>皇鑫不動產仲介經紀有限公司｜住商不動產 信義101加盟店</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
       scroll-behavior: smooth;
+      margin: 0;
+      padding: 0;
     }
     body {
-      margin: 0;
       font-family: 'Noto Sans TC', sans-serif;
       background-color: #fff;
       color: #222;
@@ -29,9 +31,9 @@
       align-items: center;
     }
     header h1 {
-      color: #bfa14a;
+      color: #007a4d;
       margin: 0;
-      font-size: 1.5rem;
+      font-size: 1.2rem;
     }
     nav a {
       margin-left: 20px;
@@ -40,52 +42,50 @@
       font-weight: 500;
     }
     nav a:hover {
-      color: #bfa14a;
+      color: #007a4d;
     }
-
-    /* hero 區塊 */
     .hero {
-      position: relative;
       height: 100vh;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero .media-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+    .hero .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 2;
+    }
+    .hero .content {
+      position: relative;
+      z-index: 3;
       display: flex;
       align-items: center;
       justify-content: center;
+      height: 100%;
+      flex-direction: column;
       text-align: center;
-      overflow: hidden;
-      color: white;
-    }
-    .media-container {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-    }
-    .media-slide {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0;
-      transition: opacity 1s ease;
-    }
-    .media-slide.active {
-      opacity: 1;
-    }
-    .hero-text {
-      z-index: 1;
       color: #fff;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
-      padding: 0 20px;
+      padding: 20px;
     }
-    .hero-text h2 {
-      font-size: 2.8rem;
-      margin-bottom: 1rem;
+    .hero h2 {
+      font-size: 3rem;
+      color: #fff;
     }
-    .hero-text p {
+    .hero p {
       font-size: 1.2rem;
+      color: #eee;
     }
-
     section {
       padding: 100px 20px;
       max-width: 1100px;
@@ -93,7 +93,7 @@
     }
     .section-title {
       font-size: 2rem;
-      color: #bfa14a;
+      color: #007a4d;
       margin-bottom: 30px;
       text-align: center;
     }
@@ -113,11 +113,18 @@
     .card:hover {
       transform: translateY(-5px);
     }
-
+    .card i {
+      font-size: 2rem;
+      color: #007a4d;
+      display: block;
+      margin-bottom: 10px;
+    }
     form {
       display: flex;
       flex-direction: column;
       gap: 15px;
+      max-width: 400px;
+      margin: auto;
     }
     form input, form textarea {
       padding: 12px;
@@ -126,7 +133,7 @@
       border-radius: 6px;
     }
     form button {
-      background-color: #bfa14a;
+      background-color: #007a4d;
       color: white;
       font-size: 1rem;
       border: none;
@@ -134,7 +141,6 @@
       border-radius: 6px;
       cursor: pointer;
     }
-
     footer {
       background: #111;
       color: white;
@@ -154,16 +160,10 @@
     </nav>
   </header>
 
-  <!-- ✅ HERO 區塊（圖片＋影片輪播） -->
   <section class="hero" id="home">
-    <div class="media-container">
-      <img src="img/slide1.jpg" class="media-slide active" />
-      <video class="media-slide" muted playsinline>
-        <source src="video/hero.mp4" type="video/mp4" />
-      </video>
-      <img src="img/slide2.jpg" class="media-slide" />
-    </div>
-    <div class="hero-text">
+    <div class="media-container"></div>
+    <div class="overlay"></div>
+    <div class="content">
       <h2>整合式不動產解決方案</h2>
       <p>從都更推動、土地整合到建案代銷，全方位專業服務</p>
     </div>
@@ -173,18 +173,22 @@
     <h2 class="section-title">服務項目</h2>
     <div class="grid">
       <div class="card">
+        <i class="bi bi-building"></i>
         <h3>都更整合推動</h3>
         <p>協助社區與地主順利啟動都市更新計畫，整合資源、爭取最大權益。</p>
       </div>
       <div class="card">
+        <i class="bi bi-broadcast"></i>
         <h3>建案代銷服務</h3>
         <p>提供銷售策略、廣告行銷與客戶管理的一條龍代銷服務。</p>
       </div>
       <div class="card">
+        <i class="bi bi-house-door"></i>
         <h3>不動產買賣</h3>
         <p>協助個人與法人進行不動產交易，專業談判、交易透明。</p>
       </div>
       <div class="card">
+        <i class="bi bi-lightbulb"></i>
         <h3>開發諮詢</h3>
         <p>提供土地評估、法規分析與可行性規劃，打造最佳投資模式。</p>
       </div>
@@ -207,13 +211,13 @@
 
   <section id="contact">
     <h2 class="section-title">聯絡我們</h2>
-    <form name="submit-to-google-sheet">
+    <form id="contact-form">
       <input type="text" name="姓名" placeholder="姓名" required />
       <input type="tel" name="電話" placeholder="電話" required />
       <input type="email" name="Email" placeholder="Email" required />
       <textarea name="留言" rows="4" placeholder="想詢問的內容..." required></textarea>
       <button type="submit">送出留言</button>
-      <p id="response-message" style="color: green;"></p>
+      <p id="responseMsg" style="color:#007a4d;"></p>
     </form>
   </section>
 
@@ -221,63 +225,66 @@
     <p>&copy; 2025 皇鑫不動產仲介經紀有限公司｜住商不動產 信義101加盟店</p>
   </footer>
 
-  <!-- ✅ 輪播 JavaScript -->
   <script>
-    const mediaSlides = document.querySelectorAll(".media-slide");
-    let mediaIndex = 0;
+    // 表單處理
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const data = new FormData(form);
+      fetch('https://script.google.com/macros/s/AKfycbwwpfG8ae6k9z6R0qXuv6o5a3--Tq1HoFuMo_Dl7y7g8tNpFQHPo2l8chGKPL1a9EPyNw/exec', {
+        method: 'POST',
+        body: data
+      })
+      .then(response => response.ok ? response.text() : Promise.reject(response))
+      .then(result => {
+        document.getElementById('responseMsg').textContent = '已收到您的留言，日後請留意信箱和電話';
+        form.reset();
+      })
+      .catch(error => {
+        document.getElementById('responseMsg').textContent = '送出失敗，請稍後再試';
+      });
+    });
 
-    function showNextMedia() {
-      const current = mediaSlides[mediaIndex];
-      if (current.tagName === "VIDEO") {
-        current.pause();
-        current.currentTime = 0;
-      }
-      current.classList.remove("active");
+    // 輪播影片與圖片背景
+    const sources = [
+      { type: 'video', src: 'hero.mp4' },
+      { type: 'image', src: 'slide1.jpg' },
+      { type: 'image', src: 'slide2.jpg' }
+    ];
 
-      mediaIndex = (mediaIndex + 1) % mediaSlides.length;
-      const next = mediaSlides[mediaIndex];
-      next.classList.add("active");
+    let currentIndex = 0;
+    const container = document.querySelector('.media-container');
 
-      if (next.tagName === "VIDEO") {
-        next.play();
-        next.onended = () => {
-          showNextMedia();
-        };
-      } else {
-        setTimeout(showNextMedia, 4000);
-      }
+    function showMedia(index) {
+      const media = sources[index];
+      container.innerHTML = '';
+      const el = media.type === 'video'
+        ? Object.assign(document.createElement('video'), {
+            src: media.src, autoplay: true, muted: true, loop: true, playsInline: true
+          })
+        : Object.assign(document.createElement('img'), {
+            src: media.src
+          });
+
+      el.style = `
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        object-fit: cover;
+        z-index: 1;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+      `;
+
+      container.appendChild(el);
+      setTimeout(() => el.style.opacity = 1, 100);
     }
 
-    window.addEventListener("load", () => {
-      const first = mediaSlides[0];
-      if (first.tagName === "VIDEO") {
-        first.play();
-        first.onended = () => {
-          showNextMedia();
-        };
-      } else {
-        setTimeout(showNextMedia, 4000);
-      }
-    });
-  </script>
-
-  <!-- ✅ 表單送出到 Google 試算表 -->
-  <script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbwwpfG8ae6k9z6R0qXuv6o5a3--Tq1HoFuMo_Dl7y7g8tNpFQHPo2l8chGKPL1a9EPyNw/exec';
-    const form = document.forms['submit-to-google-sheet'];
-    const msg = document.getElementById('response-message');
-
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => {
-          msg.textContent = "✅ 已收到您的留言，日後請留意信箱和電話";
-          form.reset();
-        })
-        .catch(error => {
-          msg.textContent = "❌ 發送失敗，請稍後再試。";
-        });
-    });
+    showMedia(currentIndex);
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % sources.length;
+      showMedia(currentIndex);
+    }, 10000);
   </script>
 </body>
 </html>
